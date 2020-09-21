@@ -108,8 +108,12 @@ input[type=submit] {
 .right-title{
   margin-top: 40px;
 }
-.right-down {
-  padding-top: 50px;
+.right-down h2{
+ height: 15vh;
+ width: inherit;
+ justify-content: center;
+ align-items: top;
+ 
 }
 .right-down a {
   text-decoration: none;
