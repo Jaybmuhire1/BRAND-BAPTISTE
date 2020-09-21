@@ -44,6 +44,10 @@ nav ul {
   text-decoration: none;
   line-height: 2rem;
 }
+.sentence{
+  text-align: center;
+  margin-bottom: 0px;
+}
 nav ul li a{
   color: white;
   text-decoration: none;
