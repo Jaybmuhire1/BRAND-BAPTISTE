@@ -97,3 +97,43 @@ nav ul li a{
   background: #A51A1A;
   color:white;
 }
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .left-side{
+    width: 100%;
+    min-height: 48vh;
+
+  }
+ nav, .social-media {
+    display: none;
+  }
+  .profile-pic {
+    display: flex;
+    margin: auto auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  h1{
+    text-align: center;
+  font-size: 20px;
+
+  } 
+  h4 {
+    text-align: center;
+font-size: 15px;
+  }
+.sentence{
+  display: none;
+}
+.right-side {
+  margin: 10px 5px 10px 5px;
+}
+}
