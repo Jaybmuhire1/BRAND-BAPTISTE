@@ -135,6 +135,7 @@ border-radius: 10px;
   .left-side{
     width: 100%;
     min-height: 80vh;
+    padding-bottom: 25px;
 
   }
 
@@ -154,13 +155,13 @@ border-radius: 10px;
   }
   h1{
     
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: auto auto;
   } 
 
   h3{
     
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin: auto auto;
   }
   /* h3 {
@@ -171,7 +172,10 @@ font-size: 15px;
   display: none;
 }
 .right-side {
-  margin: 10px 5px 10px 5px;
+  width: 500px;
+
+  font-size: 1rem;
+  margin: 15% 10% 10% 10%;
 }
 .left-nav-socio{
   display: flex;
