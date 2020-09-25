@@ -32,6 +32,10 @@ body{
    position: fixed;
   /* max-height: 100vh; */
 } 
+h1{
+  font-size: 1.5rem;
+}
+
 
 .profile-pic img{
   height: 10rem;
@@ -52,7 +56,7 @@ body{
   line-height: 2rem;
 }
 .navbar-links ul li a{
-  font-size: 1.3rem;
+  font-size: .9rem;
   color: white;
   text-decoration: none;
 
@@ -64,7 +68,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: .1rem;
 }
 .sentence{
   font-size: 1.2rem;
@@ -73,7 +77,7 @@ body{
 }
 .social-media{
   padding: 0px;
-  margin-top: 0.001rem;
+  margin-top: 3.5rem;
   height: 2rem;
 
 }
@@ -187,32 +191,88 @@ width: 100%;
 background-color: black;
 border-radius: 10px;
 }
+ @media only screen and (min-width: 1101px) {
+.left-side{
+  display: flex;
 
-@media only screen and (max-width: 980px) {
+}
+.none-display{
+  display: none;
+}
+} 
+
+
+ @media only screen and (max-width: 1100px) {
 .toggle-button{
   display: flex;
 }
-
-.navbar-links{
-  /* width: 100%; */
-  height: 60vh;
-  display: none;
-}
-.navbar-links ul{
-  /* width: 100%; */
-flex-direction: column;
-}
-.navbar-links li a {
-  align-items: center;
-  padding: .5rem 1rem;
-}
-
-.toggle{
+ .container{
+   display: flex;
+   flex-direction: column;
+ 
+ }
+ .toggle{
   display: flex;
 }
 .navbar-links.active {
    display: flex;
   }
 
+}
+.navbar-links ul{
+  
+flex-direction: column;
+}
 
+.left-side{
+  display: none;
+}
+ 
+.navbar-links li a {
+  align-items: center;
+  padding: .5rem 1rem;
+}
+
+.left-side.none-display{
+  display: flex;
+  flex-direction: column;
+}
+
+/* .toggle{
+  display: flex;
+}
+.navbar-links.active {
+   display: flex;
+  } */
+
+
+
+
+/* @media only screen and (min-width: 670px) {
+  .left-side{
+    display:flex ;
+    
+  }
+} */
+
+
+
+@media only screen and (max-width: 670px) {
+  .none-display{
+    display: flex;
+    top: 100px;
+    flex-direction: column;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .left-side{
+    position: unset;
+    width: 100%;
+  }
+  .right-side{
+    margin: auto;
+  }
 }
