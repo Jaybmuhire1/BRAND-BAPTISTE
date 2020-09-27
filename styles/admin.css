@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  text-decoration: none;
 }
 body{
   font-family: 'Poppins', 'sans-serif';
@@ -27,55 +28,17 @@ body{
   height: 100vh;
 } 
 
-.profile-pic img{
+.admin-photo img{
   height: 9rem;
   width: 9rem;
  display: block;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
+ margin: auto auto;
+ margin-top: 50px;
+ border-radius: 50%;
 }
-.navbar-links{
-  color: white;
-  height: 30%;
-  margin-top: 10px;
-}
-.navbar-links ul {
-  list-style: none;
-  text-decoration: none;
-  line-height: 2rem;
-}
-.navbar-links ul li a{
-  font-size: .9rem;
-  color: white;
-  text-decoration: none;
+.container-left{
 
-}
-h1{
-  font-size: 1.5rem;
-}
-
-.social-media ul{
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: .1rem;
-}
-.sentence{
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 0px;
-}
-.social-media{
-  padding: 0px;
-  margin-top: .001rem;
-  height: 2rem;
-
-}
-.social-media ul li img{
-  width: 2rem;
-  height: 2rem;
+  margin: auto auto;
 }
 .right-side{
   height: 100vh;
@@ -85,6 +48,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: orange;
 
 }
 /* Finish */
@@ -93,16 +57,17 @@ h1{
 
 .container-right{
 width: 100%;
-height: 80%;
+min-height: 100vh;
 display: flex;
 flex-direction: column;
 flex-wrap: nowrap;
 justify-content: space-evenly;
 align-items: flex-start;
-padding-left: 2rem;
+/* padding-left: 40px 100px 100px 400px; */
+overflow-y: scroll;
 }
 .container-right div{
-  margin-left: 2rem;
+  margin-left: auto auto;
 }
 .manage-board{
   display: flex;
@@ -114,46 +79,79 @@ padding-left: 2rem;
 }
 
 
-.first-row {
-  display:  flex;
-  width: 85vh;
+.post-title{
+  text-align: center;
+  margin: 1rem;
 }
-.first-row div {
-  margin: 2rem;
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
 }
-.second-row {
-  display:  flex;
+th,td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid teal;
 }
-.second-row div{
-  margin: 2rem;
+.edit{
+  color: green;
 }
-.third-row {
-  display:  flex;
+.delete{
+  color: red;
 }
-.third-row div{
-  margin: 2rem;
+.publish{
+  color: blue;
 }
-.fourth-row {
-  display:  flex;
+.content{
+  margin: 40px 100px 100px;
+  width: 80%;
 }
-.fourth-row div {
-  margin: 2rem;
+
+.addpost-button{
+
+  margin-top: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+  color: white;
+  background-color: teal;
+  border: 1px solid black;
+  border-radius: .8rem;
+  width: 6rem;
+  height: 3rem;
+  text-align: center;
 }
+
+
+
+
+
+
+.post-header{
+  /* margin-left: 1rem; */
+  margin-right: 1rem;
+}
+
+
 .left-management{
   color: black;
   border: 2px solid black;
   border-radius: 10px;
   background-color: white;
-  width: 12rem;
-  height: 2rem;
+  width: 14rem;
+  height: 3rem;
+  text-align: center;
+
+}
+
+.container-left div a {
+  padding: 1rem;
+  display: block;
   text-align: center;
 }
-.first-row, .second-row,.third-row,.fourth-row {
-  width: 40rem;
-  height: 4rem;
-  /* border: 2px solid black; */
-  border-bottom: 2px solid black;
-
+.container-left div a:hover{
+  background-color: teal;
+  color: #A51A1A;
 }
 
 .logout-button{
@@ -161,4 +159,72 @@ padding-left: 2rem;
   top: 50px;
   right: 50px;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
+  background-color: teal;
+  border: 1px solid black;
+  border-radius: .8rem;
+  width: 6rem;
+  height: 3rem;
+  text-align: center;
+}
+
+.post-number1, .post-author1, .post-delete, .post-edit, .post-publish {
+  cursor: pointer;
+}
+
+@media only screen and ( max-width: 960px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+   
+
+  }
+  .left-side {
+    display: flex;
+   width: 90%;
+  }
+}
+
+@media only screen and ( max-width: 660px) {
+thead{
+  display: none;
+}
+table, tbody, tr, td {
+  display: block;
+  width: 100%;
+}
+table{
+  padding-right: 15%;
+}
+
+  .left-side {
+    display: flex;
+   width: 90%;
+  }
+  td{
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  td::before{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    content: attr(data-label);
+
+
+  }
+}
+
+@media only screen and ( max-width: 360px) {
+  table {
+    width: 30%;
+    padding-left: -20%;
+    padding-right: 40%;
+  }
 }

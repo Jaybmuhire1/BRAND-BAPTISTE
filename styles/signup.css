@@ -175,6 +175,11 @@ border-radius: 10px;
     align-items: center;
 
   }
+  .create-post{
+    display: flex;
+    flex-direction: column;
+  }
+  
   .left-side{
     width: 100%;
     min-height: 80vh;
@@ -231,3 +236,46 @@ font-size: 15px;
    display: flex;
   }
 }
+
+
+
+/* codes of signed user to interact with blog */
+.create-post{ 
+  border: 3px solid black;
+  border-radius: .8rem;
+  width: 80%;
+  height: 50%;
+  cursor: pointer;
+  text-align: center;
+  padding: auto;
+}
+.right-side h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+.create-post ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  height: 90%;
+}
+
+ .create-post ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 2rem;
+   width: 30%;
+   height: 20%;
+   border-radius: .5rem;
+   background-color: #A51A1A;
+ }
+
+
+
+
+
+
+
+/* end codes of signed user to interact with blog */

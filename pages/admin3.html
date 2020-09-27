@@ -15,8 +15,11 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </a>
+      <div class="admin-photo">
+        <img src="../assets/images/admin-photo.jpg" alt="admin-photo">
+      </div>
       <div class="container-left">
-        <div><a class="left-management" href="admin.html">Manage Messages</a></div>
+        <div><a class="left-management" href="admin.html">Manage Posts</a></div>
         <br>
         <div><a class="left-management" href="admin2.html">Manage Messages</a></div>
         <br>
@@ -25,34 +28,47 @@
     </div>
     <div class="container-right">
       <a class="logout-button" href="../index.html">Log out</a>
-      <h3>Manage Users</h3>
-  <div class="first-row">
-    <div class="post-header">Names</div>
-    <div class="post-header">Email</div>
-    <div class="post-header">Edit</div>
-    <div class="post-header">Delete</div>
-  </div>
-  <div class="second-row">
-    <div class="post-number1">Jay Kaboss</div>
-    <div class="post-author1">kaboss@gmail.com</div>
-    <div class="post-delete">Delete</div>
-    <div class="post-edit">Edit</div>
-   
-  </div>
-  <div class="third-row">
-    <div class="post-number1">Dupha</div>
-    <div class="post-author1">dupha@gmaik.com</div>
-    <div class="post-delete">Delete</div>
-    <div class="post-edit">Edit</div>
-    <div class="post-publish">Publish</div>
-  </div>
-  <div class="fourth-row">
-    <div class="post-number1">Amazing journey</div>
-    <div class="post-author1">Emma</div>
-    <div class="post-delete">Delete</div>
-    <div class="post-edit">Edit</div>
-    <div class="post-publish">Publish</div>
-  </div>
+      <a href="create.html" class="addpost-button">Add user</a>
+      <br>
+      
+
+      <div class="content">
+        <h3 class="post-title">Manage Users</h3>
+        <table>
+          <thead>
+            <th>Names</th>
+            <th>Email</th>
+             <th>Role</th>
+            <th colspan="3">Action</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Names">Kaboss Jay</td>
+              <td data-label="Email">kaboss@hotmail.com</td>
+              <td data-label="Role">Admin</td>
+              <td data-label="Action"><a href="#" class="delete">Delete</td>
+              <td><a href="#" class="edit">Change Pasword</td>
+              <td><a href="#" class="publish">Authorize</td>
+            </tr>
+            <tr>
+              <td data-label="Names">Dupha</td>
+              <td data-label="Email">dupha@gmail.com</td>
+              <td data-label="Role">Author</td>
+              <td data-label="Action"><a href="#" class="delete">Delete</td>
+              <td><a href="#" class="edit">Change Pasword</td>
+              <td><a href="#" class="publish">Authorize</td>
+            </tr>
+            <tr>
+              <td data-label="Names">Donath</td>
+              <td data-label="Email">donatha@gmail.com</td>
+              <td data-label="Role">Author</td>
+              <td data-label="Action"><a href="#"  class="delete">Delete</td>
+              <td><a href="#"  class="edit">Change Pasword</td>
+              <td><a href="#"  class="publish">Authorize</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
     </div>
 
