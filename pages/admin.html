@@ -15,8 +15,11 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </a>
+      <div class="admin-photo">
+        <img src="../assets/images/admin-photo.jpg" alt="admin-photo">
+      </div>
       <div class="container-left">
-        <div><a class="left-management" href="admin.html">Manage Messages</a></div>
+        <div><a class="left-management" href="admin.html">Manage Posts</a></div>
         <br>
         <div><a class="left-management" href="admin2.html">Manage Messages</a></div>
         <br>
@@ -24,39 +27,54 @@
       </div>
     </div>
     <div class="container-right">
+      <a href="create.html" class="addpost-button">Add post</a>
       <a class="logout-button" href="../index.html">Log out</a>
-      <h3>Manage Posts</h3>
-  <div class="first-row">
-    <div class="post-header">POST</div>
-    <div class="post-header">author</div>
-    <div class="post-header">Delete</div>
-    <div class="post-header">Edit</div>
-    <div class="post-header">Publish</div>
-  </div>
-  <div class="second-row">
-    <div class="post-number1">Amazing journey</div>
-    <div class="post-author1">JayB</div>
-    <div class="post-delete">Delete</div>
-    <div class="post-edit">Edit</div>
-    <div class="post-publish">Publish</div>
-  </div>
-  <div class="third-row">
-    <div class="post-number1">Amazing journey</div>
-    <div class="post-author1">Jem</div>
-    <div class="post-delete">Delete</div>
-    <div class="post-edit">Edit</div>
-    <div class="post-publish">Publish</div>
-  </div>
-  <div class="fourth-row">
-    <div class="post-number1">Amazing journey</div>
-    <div class="post-author1">Emma</div>
-    <div class="post-delete">Delete</div>
-    <div class="post-edit">Edit</div>
-    <div class="post-publish">Publish</div>
-  </div>
+      <br>
+      
+
+      <div class="content">
+        <h3 class="post-title">Manage Posts</h3>
+        <table>
+          <thead>
+            <th>Post</th>
+            <th>Author</th>
+            <th colspan="3">Action</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Post">Amazing journey</td>
+              <td data-label="Author">JayB</td>
+              <td data-label="Action"><a href="#">Delete</td></a>
+              <td><a href="#" class="edit">Edit</td>
+              <td><a href="#" class="publish">Publish</td>
+            </tr>
+            <tr>
+              <td data-label="Post">Amazing journey</td>
+              <td data-label="Author">JayB</td>
+              <td data-label="Action"><a href="#" class="delete">Delete</td>
+              <td><a href="#" class="edit">Edit</td>
+              <td><a href="#" class="publish">Publish</td>
+            </tr>
+            <tr>
+              <td data-label="Post">Amazing journey</td>
+              <td data-label="Author">Jem</td>
+              <td data-label="Action"><a href="#"  class="delete">Delete</td>
+              <td><a href="#"  class="edit">Edit</td>
+              <td><a href="#"  class="publish">Publish</td>
+            </tr>
+            <tr>
+              <td data-label="Post">Amazing journey</td>
+              <td data-label="Author">Emma</td>
+              <td data-label="Action"><a href="#"  class="delete">Delete</td>
+              <td><a href="#"  class="edit">Edit</td>
+              <td><a href="#" class="publish">Publish</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
   </div>
     </div>
-
     <script src="../scripts/main.js"></script>
 </body>
 </html>
