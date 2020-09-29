@@ -88,6 +88,7 @@ h1{
   align-items: center;
 
 }
+
 /* Finish */
 
 
@@ -116,10 +117,11 @@ height: 75vh;
 width: 65%;
 border: 5px solid black;
 border-radius: 10px;
-/* margin: auto auto; */
+/* margin-top: 3rem; */
 }
 .right-title{
 margin-top: 40px;
+margin-bottom: 2rem;
 }
 
 .toggle-button {
@@ -182,17 +184,18 @@ line-height: .5rem;
   justify-content: center;
   margin-top: 4rem;
 }
-/* h1{
-  text-align: center;
-font-size: 20px;
 
-} 
-h3 {
-  text-align: center;
-font-size: 15px;
-} */
-.sentence{
-display: none;
+.sentence {
+  display: none;
+}
+.char {
+  font-size: 1.2rem;
+display: flex;
+margin: auto auto;
+}
+
+h1, h3 {
+  margin: auto auto;
 }
 
 .left-nav-socio{
@@ -219,11 +222,21 @@ display: flex;
 .profile-title{
   font-size: 2rem;
 }
+.right-side-form{
+  width: 100%;
+  height: 100%;
+}
+
+
+
 } 
 
+
+
+
 @media only screen and (max-width: 800px) {
-  .left-side{
-    height: 50%;
+  .right-side{
+    height: 80%;
   }
   .right-side-form{
     height: 70%;
@@ -236,16 +249,64 @@ display: flex;
     height: 50%;
   }
   .right-side-form{
-    height: 70%;
+    height: 100%;
     width: 100%;
   }
 }
-@media only screen and (max-width: 510px) {
-  .left-side{
-    height: 50%;
+
+@media only screen and (max-width: 540px) {
+  .right-side{
+    height: 80%;
   }
   .right-side-form{
-    height: 70%;
+    height: 100%;
     width: 100%;
   }
+  input[type=submit] {
+    width: 4rem;
+    height: 1.5rem;
+    }
+    input[type=text], input[type=email], textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      margin: auto auto;
+    }
+    label{
+      font-size: .8rem;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .right-side{
+    height: 100%;
+
+  }
+  .right-side-form{
+    height: 100%;
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 4rem;
+    height: 1.4rem;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    }
+    input[type=text], input[type=email], textarea {
+      width: 90%;
+      padding: 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      margin: auto auto;
+      margin-left: .5rem;
+    }
+    label{
+      font-size: .8rem;
+      margin-left: .5rem;
+    }
+
 }
