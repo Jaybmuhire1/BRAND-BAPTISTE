@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  text-decoration: none;
 }
 body{
   font-family: 'Poppins', 'sans-serif';
@@ -166,7 +167,7 @@ border-radius: 10px;
   }
   .left-side{
     width: 100%;
-    min-height: 80vh;
+    height: 100%;
 
   }
   .left-nav-socio{
