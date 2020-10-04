@@ -31,7 +31,7 @@ body{
    left: 0;
    bottom: 0;
    position: fixed;
-  /* max-height: 100vh; */
+  /* min-height: 100vh; */
 } 
 h1{
   font-size: 1.5rem;
@@ -39,8 +39,8 @@ h1{
 
 
 .profile-pic img{
-  height: 10rem;
-  width: 10rem;
+  height: 9rem;
+  width: 9rem;
  display: block;
  margin-left: auto;
  margin-right: auto;
@@ -304,9 +304,9 @@ h1, h3 {
 flex-direction: column;
 }
 
-.left-side{
+/* .left-side{
   display: none;
-}
+} */
  
 .navbar-links li a {
   align-items: center;
