@@ -113,14 +113,20 @@ const auth = firebase.auth();
 if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
   
   document.querySelector('.alert').style.display = 'block';
+  document.querySelector('.alert').innerHTML = 'Please fill the below input';
   setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
 
-  } else 
+  } else if (pass !== passConfirmInput){
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'password does not match';
+    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+  }
+
    {
-  console.log('hello');
+  
   const promise = auth.createUserWithEmailAndPassword(email, pass);
   promise.catch(e => console.log(e.message));
-  console.log('hello');
+  
   };
   
 }
