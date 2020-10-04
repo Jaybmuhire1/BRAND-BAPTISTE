@@ -17,6 +17,7 @@ body{
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
 }
 
 .left-side {
@@ -41,7 +42,7 @@ body{
 .navbar-links{
   color: white;
   height: 30%;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .navbar-links ul {
   list-style: none;
@@ -72,7 +73,7 @@ h1{
 }
 .social-media{
   padding: 0px;
-  margin-top: .001rem;
+  margin-top: .01rem;
   height: 2rem;
 
 }
@@ -81,20 +82,11 @@ h1{
   height: 2rem;
 }
 
-.profile-pic img{
-  height: 9rem;
-  width: 9rem;
- display: block;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
-}
-
 
 .right-side{
-  height: 100vh;
+  height: 100%;
   width: 60%;;
-  margin: auto auto;
+  margin-left: auto auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,9 +134,11 @@ border-radius: 10px;
   .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   .right-side{
-    width: 90%;
+    width: 100%;
+    /* height: 60%; */
   }
   .sentence {
     display: none;
@@ -155,11 +149,15 @@ border-radius: 10px;
   margin: auto auto;
   }
 
-  h1,h4{
-    margin:1rem;
+ .left-side h1, h3 {
+    margin: auto auto;
   }
-.right-side h4{
+  /* h4{
+    margin: 1rem;
+  } */
+.right-side h4, h1{
   font-size: 1.5rem;
+  margin: 1rem;
 }
 h4{
   font-size: 1rem;
@@ -186,16 +184,13 @@ h4{
     width: 100%;
     height: 30%;
     display: flex;
-    /* flex-direction: row-reverse; */
-    /* flex-wrap: wrap; */
+   
     justify-content: space-between;
   }
 
 .social-media ul{
   margin-top: 0;
   width: 100%;
-
-  /* justify-content: space-between; */
 }
 .social-media ul li{
   margin: .2rem;
@@ -206,9 +201,10 @@ h4{
   }
   .social-media {
     display: flex;
-    align-items: left;
+    align-items: center;
     height: 100%;
     width: 40%;
+    margin: auto auto;
     
   }
 

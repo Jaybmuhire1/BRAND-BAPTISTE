@@ -25,7 +25,7 @@ body{
   flex-direction: column;
   justify-content: center;
   width: 30%;
-  min-height: 100vh;
+  height: 100vh;
 } 
 
 .profile-pic img{
@@ -88,71 +88,52 @@ h1{
   align-items: center;
 
 }
-/* Finish */
 
 /* Finish */
-.right-side{
-  height: 100vh;
-  width: 60%;
-  margin: auto auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-}
-input[type=text], input[type=email] {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid black;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 2px;
-    margin-bottom: 6px;
+
+input[type=text], input[type=email], input[type=password], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 2px;
+  margin-bottom: 6px;
 }
 input[type=submit] {
-  border: 2px solid black;
-  width: 6rem;
-  height: 2.5rem;
-  border-radius: 5px;
-  background-color: #A51A1A;
+border: 2px solid black;
+width: 6rem;
+height: 2.5rem;
+border-radius: 5px;
+background-color: #A51A1A;
+cursor: pointer;
 }
 .right-side-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 60%;
-  border: 5px solid black;
-  border-radius: 10px;
-  margin: auto auto;
-  margin-top: 40px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 75vh;
+width: 65%;
+border: 5px solid black;
+border-radius: 10px;
+margin-top: 2rem;
 }
 .right-title{
-  margin-top: 40px;
-}
-.right-down h2{
- height: 15vh;
- width: inherit;
- justify-content: center;
- align-items: top;
- 
-}
-.right-down a {
-  text-decoration: none;
-  color: #A51A1A;
+margin-top: 40px;
+margin-bottom: 2rem;
 }
 
 .toggle-button {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
+position: absolute;
+top: 2rem;
+right: 2rem;
+display: none;
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 20px;
 }
 .toggle-button .bar {
 height: 3px;
@@ -160,133 +141,186 @@ width: 100%;
 background-color: white;
 border-radius: 10px;
 }
-/* Start of media */
 
 
 
 @media only screen and (max-width: 1100px) {
-  .toggle-button {
-    display: flex;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-  .create-post{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .left-side{
-    width: 100%;
-    height: 100%;
-
-  }
-  .left-nav-socio{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .social-media {
-    display: flex;
-
-  }
-  .social-media ul li{
-    margin: .2rem;
-  }
-  .profile-pic {
-    display: flex;
-    margin: auto auto;
-    align-items: center;
-    justify-content: center;
-    margin-top: 4rem;
-  }
-  .sentence {
-    display: none;
-  }
-  /* .char {
-    font-size: 1.2rem;
+.toggle-button {
   display: flex;
-  margin: auto auto;
-  } */
-  
-  h1 {
-    
-    font-size: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-  } 
- 
-  h2 {
-    
-    font-size: 1.2rem;
-    margin-left: auto;
-    margin-right: auto;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
-.right-side {
-  margin: 10px 5px 10px 5px;
+.char {
+  font-size: 1.5rem;
+display: flex;
+margin: auto auto;
+line-height: .5rem;
+}
+
+
+.left-side{
+  width: 100vw;
+  min-height: 80vh;
+
+}
+
+
+.social-media {
+  display: flex;
+}
+.social-media ul li{
+  margin: .2rem;
+}
+.profile-pic {
+  display: flex;
+  margin: auto auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.sentence {
+  display: none;
+}
+.char {
+  font-size: 1.2rem;
+display: flex;
+margin: auto auto;
+}
+
+h1, h3 {
+  margin: auto auto;
+}
+
+.left-nav-socio{
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-between;
+align-items: center;
 }
 
 .navbar-links{
-  width: 100%;
-  height: 100%;
-  display: none;
-  margin-left: 60%;
-  justify-content: right;
-
+width: 100%;
+height: 100%;
+display: none;
+margin-left: 60%;
+justify-content: right;
 }
 .toggle{
-  display: flex;
+display: flex;
 }
 .navbar-links.active {
-   display: flex;
+ display: flex;
+}
+
+.profile-title{
+  font-size: 2rem;
+}
+.right-side-form{
+  width: 100%;
+  height: 100%;
+}
+} 
+
+.alert{
+  height:2rem; 
+  width:67%; 
+  margin:0; 
+  padding:0; 
+  background-color: red;
+  text-align: center;
+  display: none;
+}
+
+h3 a{
+  color: #A51A1A;
+  text-decoration: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+  .right-side{
+    height: 80%;
+  }
+  .right-side-form{
+    height: 70%;
+    width: 80%;
+  }
+  
+}
+@media only screen and (max-width: 650px) {
+  .left-side{
+    height: 50%;
+  }
+  .right-side-form{
+    height: 100%;
+    width: 100%;
   }
 }
 
+@media only screen and (max-width: 540px) {
+  .right-side{
+    height: 80%;
+  }
+  .right-side-form{
+    height: 100%;
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 4rem;
+    height: 1.5rem;
+    }
+    input[type=text], input[type=email], input[type=password], textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      margin: auto auto;
+    }
+    label{
+      font-size: .8rem;
+    }
 
-
-/* codes of signed user to interact with blog */
-.create-post{ 
-  border: 3px solid black;
-  border-radius: .8rem;
-  width: 80%;
-  height: 50%;
-  cursor: pointer;
-  text-align: center;
-  padding: auto;
 }
-.right-side h3 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 3rem;
+
+@media only screen and (max-width: 480px) {
+  .right-side{
+    height: 100%;
+
+  }
+  .right-side-form{
+    height: 100%;
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 4rem;
+    height: 1.4rem;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    }
+    input[type=text], input[type=email], input[type=password], textarea {
+      width: 90%;
+      padding: 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      margin: auto auto;
+      margin-left: .5rem;
+    }
+    label{
+      font-size: .8rem;
+      margin-left: .5rem;
+    }
+
 }
-.create-post ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  list-style: none;
-  height: 90%;
-}
-
- .create-post ul li a {
-   text-decoration: none;
-   color: white;
-   font-size: 2rem;
-   width: 30%;
-   height: 20%;
-   border-radius: .5rem;
-   background-color: #A51A1A;
- }
-
-
-
-
-
-
-
-/* end codes of signed user to interact with blog */
