@@ -26,13 +26,16 @@ const signOut = document.getElementById('sign-out');
   const email = emailInput.value;
   const pass = passInput.value;
 
-  if(!email || pass) {
-    console.log('Email and Password should be entered');
+  if(email === '' || pass === '') {
+    document.querySelector('.alert').innerHTML = 'Please write correct email and password';
+    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+  } else {
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+    console.log('yes');
+    window.location.href = "../pages/blog2.html";
   }
-  const promise = auth.signInWithEmailAndPassword(email, pass);
-  promise.catch(e => console.log(e.message));
-  console.log('yes');
-  window.location.href = "../index.html";
+
 };
 
 // signOut.addEventListener('click', e => {
@@ -41,17 +44,15 @@ const signOut = document.getElementById('sign-out');
 // }
 // })
 
-auth().onAuthStateChange( function(user) {
-   if(User) {
+firebase.auth().onAuthStateChange( function(user) {
+   if(user) {
      var email = user.email;
      alert("Active " + email);
-     window.location.href = "../index.html";
+     window.location.href = "../pages/blog2.html";
     //  signOut.style.display = 'block';
    } else {
     alert("No Active user ");
      console.log('not logged in')
-
-     signOut.style.display = "none"
    }
  });
   

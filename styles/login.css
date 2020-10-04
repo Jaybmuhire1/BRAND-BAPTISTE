@@ -134,6 +134,7 @@ input[type=submit] {
   color: #A51A1A;
 }
 
+
 .toggle-button {
   position: absolute;
   top: 2rem;
@@ -149,6 +150,17 @@ height: 3px;
 width: 100%;
 background-color: white;
 border-radius: 10px;
+}
+
+
+.alert{
+  height:2rem; 
+  width:67%; 
+  margin:0; 
+  padding:0; 
+  background-color: red;
+  text-align: center;
+  display: none;
 }
 /* Start of media */
 
