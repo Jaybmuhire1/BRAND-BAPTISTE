@@ -17,69 +17,47 @@ const emailInput = document.getElementById('email-input');
 const passInput = document.getElementById('pass-input');
 const passCInput = document.getElementById('pass-confirm-input');
 const nameInput = document.getElementById('full-name');
-const signIn = document.getElementById('sign-in');
+const signInForm = document.getElementById('login-form');
 const signOut = document.getElementById('sign-out');
 
- signIn.addEventListener('click', onSignIn);
+ signInForm.addEventListener('submit', onSignIn);
  function onSignIn (e) {
   e.preventDefault();
   const email = emailInput.value;
   const pass = passInput.value;
+  var regx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
-  if(email === '' || pass === '') {
-    document.querySelector('.alert').innerHTML = 'Please write correct email and password';
+
+  if (!regx.test(email)) {
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'Please validate your email';
     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-  } else {
+    return false;
+  } else 
+
+  if(email === '') {
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'Please fill in the email';
+    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+    return false;
+  } else if(pass === '') {
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'Please insert password';
+    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+
+  } else if (pass.length < 6) {
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'Password must have atleast 6 chracters';
+    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+    return false;
+
+  }  else {
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
-    console.log('yes');
     window.location.href = "../pages/blog2.html";
   }
 
 };
 
-// signOut.addEventListener('click', e => {
-// signOut(){
-// console.log('hiii')
-// }
-// })
-
-firebase.auth().onAuthStateChange( function(user) {
-   if(user) {
-     var email = user.email;
-     alert("Active " + email);
-     window.location.href = "../pages/blog2.html";
-    //  signOut.style.display = 'block';
-   } else {
-    alert("No Active user ");
-     console.log('not logged in')
-   }
- });
-  
 
  
-
-
-
-
-
-
-
-
-
-
-
-  
-//   if(nameFull === '') {
-//   setErrorFor(nameFull, 'Please insert full name')
-//   } else {
-// setSuccess(nameFull)
-//   }
-
-// }
-
-
-
-
-
-//

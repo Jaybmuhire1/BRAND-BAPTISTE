@@ -142,6 +142,18 @@ border-radius: 10px;
 }
 
 
+.alert{
+  height:2rem; 
+  width:67%; 
+  margin:0; 
+  padding:0; 
+  background-color: red;
+  text-align: center;
+  display: none;
+}
+
+
+
 
 @media only screen and (max-width: 1100px) {
 .toggle-button {
@@ -154,13 +166,6 @@ border-radius: 10px;
   justify-content: space-between;
   align-items: center;
 
-}
-
-.char {
-  font-size: 1.5rem;
-display: flex;
-margin: auto auto;
-line-height: .5rem;
 }
 
 
@@ -188,15 +193,24 @@ line-height: .5rem;
 .sentence {
   display: none;
 }
-.char {
+
+
+h1{
+  font-size: 1.5rem;
+display: flex;
+margin: auto auto;
+line-height: .5rem;
+}
+
+
+h3{
   font-size: 1.2rem;
 display: flex;
 margin: auto auto;
+line-height: .5rem;
 }
 
-h1, h3 {
-  margin: auto auto;
-}
+
 
 .left-nav-socio{
 display: flex;
@@ -242,7 +256,29 @@ display: flex;
     height: 70%;
     width: 80%;
   }
+
+  h1{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 20px;
+  }
   
+  h3{
+    text-align: center;
+    font-size: 15px;
+  
+  }
+  
+  .social-media ul li a{
+   
+    margin: .5rem;
+  }
+  
+  .social-media ul li{
+    margin: auto auto;
+  }
+
+
 }
 @media only screen and (max-width: 650px) {
   .left-side{
@@ -255,6 +291,9 @@ display: flex;
 }
 
 @media only screen and (max-width: 540px) {
+  
+
+  
   .right-side{
     height: 80%;
   }
@@ -277,8 +316,9 @@ display: flex;
     label{
       font-size: .8rem;
     }
+    
+  }
 
-}
 
 @media only screen and (max-width: 480px) {
   .right-side{

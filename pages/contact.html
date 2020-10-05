@@ -39,28 +39,34 @@
         <li><a href="https://www.facebook.com/Jaybmuhire"><img src="../assets/images/facebook.png" alt="facebook-icon"></a></li>
         <li><a href="https://github.com/Jaybmuhire1"><img src="../assets/images/github.png" alt="github-icon"></a> </li>
         <li><a href = "mailto: jaybmuhire@gmail.com"><img src="../assets/images/gmail.png" alt="gmail-icon"></a></li>
+        <li><a href="https://twitter.com/MUHIREJAYBI"><img src="../assets/images/Twitter.png" alt="twitter-icon"></a> </li>
       </ul>
     </div>
     </div>
     <div class="right-side">
       <h2 class="right-title">Please feel free to reach me out</h2>
+      <div class="alert">Message Sent</div>
       <div class="right-side-form">
-       <form>
+       <form id="contactForm">
          <label for="full_name">Full Name</label>
-         <input name="full_name" type="text" required>
+         <input name="full_name" type="text" id="fname">
          <br>
          <label for="email">Email</label>
-         <input name="email" type="email" required>
+         <input name="email" type="email" id="email">
          <br>
          <label for="message">Message</label><br>
-         <textarea name="message" cols="30" rows="10" required> </textarea>
+         <textarea name="message" cols="30" rows="10" id="subject"></textarea>
          <div class="center">
-           <input type="submit" value="Submit">
+         <input type="submit" value="Submit">
          </div>
        </form>	
    </div>
     </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/contact.js"></script>
 </body>
 </html>
