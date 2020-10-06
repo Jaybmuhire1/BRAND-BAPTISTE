@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Logging in</title>
-  <!-- <link rel="stylesheet" href="../styles/contact.css"> -->
   <link rel="stylesheet" href="../styles/login.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,500&display=swap" rel="stylesheet">
 </head>
@@ -40,6 +39,7 @@
         <li><a href="https://www.facebook.com/Jaybmuhire"><img src="../assets/images/facebook.png" alt="facebook-icon"></a></li>
         <li><a href="https://github.com/Jaybmuhire1"><img src="../assets/images/github.png" alt="github-icon"></a> </li>
         <li><a href = "mailto: jaybmuhire@gmail.com"><img src="../assets/images/gmail.png" alt="gmail-icon"></a></li>
+        <li><a href="https://twitter.com/MUHIREJAYBI"><img src="../assets/images/Twitter.png" alt="twitter-icon"></a> </li>
       </ul>
     </div>
     </div>
@@ -47,12 +47,12 @@
       <h2 class="right-title">Please login to create your story</h2>
       <div class="right-side-form">
         <div class="alert">Message Sent</div>
-       <form>
+       <form id="login-form" action="blog2.html">
          <label for="email">Email</label>
-         <input name="email" type="email" id="email-input">
+         <input name="email" type="text" id="email-input">
          <br>
          <label for="password">Password</label>
-         <input name="password" type="password" id="pass-input">
+         <input name="password" type="password" id="pass-input" autocomplete="off">
          <br>
          <div class="center">
            <input type="submit" value="Login" id="sign-in">
