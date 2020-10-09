@@ -10,104 +10,23 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
-
-   //Code for getting element
-
-  //  const signUp = document.getElementById('sign-up');
-
-
-  //  const submitBtn = document.getElementById('submit-btn');
-
-  //  const validate = (e) => {
-  //    e.preventDefault();
-  //    const nameInput = document.getElementById('full-name');
-  //    const emailInput = document.getElementById('email-input');
-  //    if (nameInput.value === "") {
-  //      alert("Please enter your username.");
-  //      nameInput.focus();
-  //      return false;
-  //    }
-       
-  //    if (emailInput.value === "") {
-  //      alert("Please enter your email address.");
-  //      emailInput.focus();
-  //      return false;
-  //    }
-   
-  //    if (!emailIsValid(emailInput.value)) {
-  //      alert("Please enter a valid email address.");
-  //      emailAddress.focus();
-  //      return false;
-  //    } else {
-  //     const promise = auth.createUserWithEmailAndPassword(email,pass);
-  //     promise.catch(e => console.log(e.message));
-  //    }
-  //  }
-   
-  //  const emailIsValid = email => {
-  //    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  //  }
-   
-  //  signUp.addEventListener('click', validate);
-
-
-
-
-
- // function (message) {
-  //   const div = document.getElementsByClassName('display-error');
-  //   div.appendChild(document.createTextNode('Please correct'));
-  //   div.style.display = "block";
-  //   setTimeout(function() {
-  //     document.getElementsByClassName('display-error').remove();
-  //   }, 3000); 
-  //   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
    const signUpForm = document.getElementById('sign-up-form');
    const signUp = document.getElementById('sign-up');
    const emailInput = document.getElementById('email-input');
    const passInput = document.getElementById('pass-input');
    const passCInput = document.getElementById('pass-confirm-input');
    const nameInput = document.getElementById('full-name');
-   const signIn = document.getElementById('sign-in');
-   const signOut = document.getElementById('sign-out');
+   
    
    signUpForm.addEventListener('submit', onSignUp);
 
   function onSignUp (e) {
   e.preventDefault();
- 
+ alert('hihi');
    const nameFull = nameInput.value;
    const email = emailInput.value;
    const pass = passInput.value;
-   const auth = firebase.auth();
+  //  const auth = firebase.auth();
    const passConfirmInput = passCInput.value;
 
 if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
@@ -122,11 +41,28 @@ if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
   }
 
-   {
   
-  const promise = auth.createUserWithEmailAndPassword(email, pass);
-  promise.catch(e => console.log(e.message));
+  try { 
+    await auth.createUserWithEmailAndPassword(email, pass)
+    .then((user) => {addUser(auth.currentUser.uid, email, 'guest')
+    window.location.href = "../pages/login.html";
+  });
+  } catch (e) {
+    console.log(e);
+    alert(e);
+  }
   
-  };
-  
+}
+
+const addUser = async (id,email,role) => {
+  try {
+    await db.collection('users').doc(id).set({
+      id,
+    email,
+    role
+    });
+  } catch(e) {
+    console.log(e);
+    alert(e);
+  }
 }

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up</title>
-  <!-- <link rel="stylesheet" href="../styles/contact.css"> -->
-  <link rel="stylesheet" href="../styles/signup.css">
+  <title>Wecome|Blog</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,500&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="../styles/signup.css"> -->
+  <link rel="stylesheet" href="../styles/createpost.css">
 </head>
 <body>
   <div class="container">
@@ -19,7 +19,6 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </a>
-      <br>
       <h1 class="char">Muhire Jean Baptiste</h1>
       <br>
       <h3 class="char">Full stack software Engineer</h3>
@@ -41,40 +40,43 @@
         <li><a href="https://www.facebook.com/Jaybmuhire"><img src="../assets/images/facebook.png" alt="facebook-icon"></a></li>
         <li><a href="https://github.com/Jaybmuhire1"><img src="../assets/images/github.png" alt="github-icon"></a> </li>
         <li><a href = "mailto: jaybmuhire@gmail.com"><img src="../assets/images/gmail.png" alt="gmail-icon"></a></li>
-        <li><a href="https://twitter.com/MUHIREJAYBI"><img src="../assets/images/Twitter.png" alt="twitter-icon"></a> </li>
       </ul>
     </div>
     </div>
     <div class="right-side">
-      <h2 class="right-title">Did you know?</h2>
-      <h4>You could publish your blog,comments and likes the existing post after Signup</h4>
-      <div class="right-side-form">
-        <div class="alert">Message Sent</div>
-       <form id="sign-up-form">
-         <label for="full_name">Full Name</label>
-         <input name="full_name" type="text" id="full-name">
-         <br>
-         <label for="email">Email</label>
-         <input name="email" type="email" id="email-input">
-         <br>
-         <label for="password">Password</label>
-         <input name="password" type="password" id="pass-input">
-         <br>
-         <label for="password">Confirm password</label>
-         <input name="password" type="password" id="pass-confirm-input">
-         <br>
-          <input type="submit" value="Signup" id="sign-up">
-         </div>
-       </form>	
-       <h4>If you have an account,Please<a href="login.html">Login</a> </h4>
-   </div>
-    </div>
+<!-- <button id="logout-btn">Logout</button> -->
+<div class="create-post">
+  <br><br>
+
+  <button  onclick="submit()" id="insert">CREATE POST</button>
+  <button id="update">UPDATE</button>
+  <button id="delete">DELETE</button>
+   <!-- <h3>Please Fill the below field</h3> -->
+   <div class="alert">Message Sent</div>
+   <form  action="" onsubmit="event.preventDefault()">
+    <label for="">Author</label><br>
+    <input id="inputauthor" type="text"><br>
+    <label for="">Date</label><br>
+    <input id="inputdate" type="text"><br>
+    <label for="">Title</label><br>
+    <input id="inputtitle" type="text"><br>
+    <label for="">Content</label><br>
+    <textarea id="inputcontent" type="text" cols="30" rows="10"></textarea> <br>
+    <label for="">Image</label><br>
+    <input type="file" id="image" onchange="uploadImage(event)">
+    <button onclick="submit()">CREATE POST</button>
+   </form>
+</div>
+</div>
+</div>
+
+    
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
 
-
-    <script src="../scripts/signup.js"></script>
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/post.js"></script>
 </body>
 </html>
