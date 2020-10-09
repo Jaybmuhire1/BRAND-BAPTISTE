@@ -22,7 +22,6 @@ const auth = firebase.auth();
 
   function onSignUp (e) {
   e.preventDefault();
- alert('hihi');
    const nameFull = nameInput.value;
    const email = emailInput.value;
    const pass = passInput.value;
@@ -42,17 +41,16 @@ if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
   }
 
   
-  try { 
-    await auth.createUserWithEmailAndPassword(email, pass)
-    .then((user) => {addUser(auth.currentUser.uid, email, 'guest')
+ const promise = auth.createUserWithEmailAndPassword(email, pass)
+    promise.then((user) => {addUser(auth.currentUser.uid, email, 'guest')
     window.location.href = "../pages/login.html";
   });
-  } catch (e) {
+  promise.catch (e =>{
     console.log(e);
-    alert(e);
+  });
+
   }
   
-}
 
 const addUser = async (id,email,role) => {
   try {
