@@ -17,8 +17,18 @@ const emailInput = document.getElementById('email-input');
 const passInput = document.getElementById('pass-input');
 const passCInput = document.getElementById('pass-confirm-input');
 const nameInput = document.getElementById('full-name');
-const signInForm = document.getElementById('login-form');
+// const signInForm = document.getElementById('login-form');
 const signOut = document.getElementById('sign-out');
+
+
+//login function
+
+
+
+
+
+
+///////////
 
  signInForm.addEventListener('submit', onSignIn);
  function onSignIn (e) {
@@ -53,11 +63,16 @@ const signOut = document.getElementById('sign-out');
 
   }  else {
     const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+    promise.then((val) => {
     window.location.href = "../pages/blog2.html";
+    });
+    promise.catch(e => console.log(e.message));
+    
   }
 
 };
+
+//add user function
 
 
  
