@@ -46,25 +46,27 @@
     <div class="right-side">
 <!-- <button id="logout-btn">Logout</button> -->
 <div class="create-post">
-  <br><br>
-
-  <button  onclick="submit()" id="insert">CREATE POST</button>
-  <button id="update">UPDATE</button>
-  <button id="delete">DELETE</button>
-   <!-- <h3>Please Fill the below field</h3> -->
+  <ul>
+    <li><a href="createpost.html">Add new Post</a></li>
+    <li><a href="#">Edit Post</a></li>
+    <li><a href="#">Publish Post</a></li>
+    <li><a href="#">Delete Post</a></li>
+    <li><a href="#">Account</a></li>
+    <li><a id="logout-btn" href="#">Logout</a></li>
+  </ul>
    <div class="alert">Message Sent</div>
-   <form  action="" onsubmit="event.preventDefault()">
-    <label for="">Author</label><br>
+   <form  action="" onsubmit="event.preventDefault()" id="createform">
+    <!-- <label for="">Author</label><br>
     <input id="inputauthor" type="text"><br>
     <label for="">Date</label><br>
-    <input id="inputdate" type="text"><br>
+    <input id="inputdate" type="text"><br> -->
     <label for="">Title</label><br>
     <input id="inputtitle" type="text"><br>
     <label for="">Content</label><br>
     <textarea id="inputcontent" type="text" cols="30" rows="10"></textarea> <br>
     <label for="">Image</label><br>
     <input type="file" id="image" onchange="uploadImage(event)">
-    <button onclick="submit()">CREATE POST</button>
+    <button  onclick="submit()" id="insert">CREATE POST</button>
    </form>
 </div>
 </div>
@@ -77,6 +79,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
 
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/post.js"></script>
+    <script src="../scripts/firebase.js"></script>
 </body>
 </html>

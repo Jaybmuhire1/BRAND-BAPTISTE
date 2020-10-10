@@ -309,3 +309,15 @@ border-radius: 10px;
     }
 
 }
+
+@media only screen and (max-width: 390px){
+
+  .social-media ul li{
+    margin: .5rem;
+  }
+
+  .left-side{
+    width: 100%;
+
+  }
+}

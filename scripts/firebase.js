@@ -11,68 +11,15 @@
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
   
-   //Code for getting element
-const signUp = document.getElementById('sign-up');
-const emailInput = document.getElementById('email-input');
-const passInput = document.getElementById('pass-input');
-const passCInput = document.getElementById('pass-confirm-input');
-const nameInput = document.getElementById('full-name');
-// const signInForm = document.getElementById('login-form');
-const signOut = document.getElementById('sign-out');
+const signOut = document.querySelector('#logout-btn');
 
-
-//login function
-
-
-
-
-
-
-///////////
-
- signInForm.addEventListener('submit', onSignIn);
- function onSignIn (e) {
+signOut.addEventListener('click', (e) =>{
   e.preventDefault();
-  const email = emailInput.value;
-  const pass = passInput.value;
-  var regx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-
-
-  if (!regx.test(email)) {
-    document.querySelector('.alert').style.display = 'block';
-    document.querySelector('.alert').innerHTML = 'Please validate your email';
-    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-    return false;
-  } else 
-
-  if(email === '') {
-    document.querySelector('.alert').style.display = 'block';
-    document.querySelector('.alert').innerHTML = 'Please fill in the email';
-    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-    return false;
-  } else if(pass === '') {
-    document.querySelector('.alert').style.display = 'block';
-    document.querySelector('.alert').innerHTML = 'Please insert password';
-    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-
-  } else if (pass.length < 6) {
-    document.querySelector('.alert').style.display = 'block';
-    document.querySelector('.alert').innerHTML = 'Password must have atleast 6 chracters';
-    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-    return false;
-
-  }  else {
-    const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.then((val) => {
-    window.location.href = "../pages/blog2.html";
-    });
-    promise.catch(e => console.log(e.message));
-    
-  }
-
-};
-
-//add user function
+  auth.signOut().then(() => {
+    // window.location.href ="../index.html";
+    console.log('user has logged out')
+  })
+});
 
 
  

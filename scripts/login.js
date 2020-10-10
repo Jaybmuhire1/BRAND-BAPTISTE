@@ -42,20 +42,38 @@ function onSignIn (e) {
 
  } else if (pass.length < 6) {
    document.querySelector('.alert').style.display = 'block';
-   document.querySelector('.alert').innerHTML = 'Password must have atleast 6 chracters';
+   document.querySelector('.alert').innerHTML = 'Password must have atleast 6 characters';
    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
    return false;
 
  }  else {
    const promise = auth.signInWithEmailAndPassword(email, pass);
    promise.then((val) => {
-   window.location.href = "../pages/blog2.html";
+   window.location.href = "../pages/createpost.html";
+   document.querySelector('.alert').style.display = 'block';
+   document.querySelector('.alert').style.backgroundColor = '#008000';
+   document.querySelector('.alert').innerHTML = 'Please insert password';
+   setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
    });
-   promise.catch(e => console.log(e.message));
+   promise.catch(e => {
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'Please use the correct password';
+    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+     console.log(e.message)});
    
  }
 
 };
 
 //add user function
+
+auth.onAuthStateChanged(user =>{
+  if(user){
+    console.log('user logged in',user)
+  } else {
+    console.log('user logged out')
+  } 
+}) 
+
+
 
