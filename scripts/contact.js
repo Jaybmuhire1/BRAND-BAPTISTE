@@ -35,7 +35,8 @@ db.collection('messages').add({
     subject:c,
 })
 .then(function (){console.log('Contact Saved');
-document.querySelector('.alert').style.display = 'block';
+  document.querySelector('.alert').style.display = 'block';
+  document.querySelector('.alert').style.backgroundColor = '#008000'; 
   document.querySelector('.alert').innerHTML = 'Message sent';
   setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
 })

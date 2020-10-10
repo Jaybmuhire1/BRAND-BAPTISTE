@@ -28,6 +28,11 @@ body{
   height: 100vh;
 } 
 
+span{
+  text-align: center;
+  font-size: 2rem;
+}
+
 .admin-photo img{
   height: 9rem;
   width: 9rem;
@@ -143,6 +148,14 @@ th,td {
   text-align: center;
 
 }
+
+.active1{
+  background-color: teal;
+  color: white;
+}
+
+
+
 
 .container-left div a {
   padding: 1rem;

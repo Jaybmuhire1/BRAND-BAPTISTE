@@ -377,18 +377,23 @@ button{
 }
 
 .create-post ul{
+  height: 15vh;
+  width: 69%;
   list-style: none;
   display: flex;
   flex-direction: row;
-  line-height: 2rem;
-}
-.create-post ul li a {
-  margin: 4rem;
-  border: 2px solid black;
-  color: white;
+  justify-content: center;
+  align-items: center;
   background-color: #A51A1A;
+  top: 0;
+  left: 31%;
+  position: fixed;
   
 }
-.create-post {
-  margin-top: 10rem;
+.create-post ul li a {
+
+  color: white;
+  margin: 2rem;
+  font-size: 1rem;
+  
 }

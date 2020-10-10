@@ -9,23 +9,25 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+const db = firebase.firestore();
+var regx = /^[a-zA-Z]{2,}$/
 
    const signUpForm = document.getElementById('sign-up-form');
-   const signUp = document.getElementById('sign-up');
-   const emailInput = document.getElementById('email-input');
-   const passInput = document.getElementById('pass-input');
-   const passCInput = document.getElementById('pass-confirm-input');
-   const nameInput = document.getElementById('full-name');
-   
-   
+   const signOut = document.querySelector('#logout-btn');
+
    signUpForm.addEventListener('submit', onSignUp);
 
   function onSignUp (e) {
   e.preventDefault();
+
+  const emailInput = document.getElementById('email-input');
+  const passInput = document.getElementById('pass-input');
+  const passCInput = document.getElementById('pass-confirm-input');
+  const nameInput = document.getElementById('full-name');
+
    const nameFull = nameInput.value;
    const email = emailInput.value;
    const pass = passInput.value;
-  //  const auth = firebase.auth();
    const passConfirmInput = passCInput.value;
 
 if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
@@ -38,29 +40,44 @@ if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
     document.querySelector('.alert').style.display = 'block';
     document.querySelector('.alert').innerHTML = 'password does not match';
     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-  }
+  } else if (!regx.test(nameFull)) {
+      document.querySelector('.alert').style.display = 'block';
+      document.querySelector('.alert').innerHTML = 'Please correct your name';
+      setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+      return false;
+  } else{
 
-  
- const promise = auth.createUserWithEmailAndPassword(email, pass)
+    const promise = auth.createUserWithEmailAndPassword(email, pass)
     promise.then((user) => {addUser(auth.currentUser.uid, email, 'guest')
-    window.location.href = "../pages/login.html";
+    document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').innerHTML = 'You have registered';
+    setTimeout(function() {window.location.href = "../pages/login.html";}, 3000)
   });
   promise.catch (e =>{
     console.log(e);
   });
 
   }
-  
 
-const addUser = async (id,email,role) => {
-  try {
-    await db.collection('users').doc(id).set({
-      id,
-    email,
-    role
-    });
-  } catch(e) {
-    console.log(e);
-    alert(e);
   }
-}
+  
+  signOut.addEventListener('click', (e) =>{
+    e.preventDefault();
+    auth.signOut().then(() => {
+      console.log('user has signed out')
+    })
+  });
+
+
+// const addUser = async (id,email,role) => {
+//   try {
+//     await db.collection('users').doc(id).set({
+//       id,
+//     email,
+//     role
+//     });
+//   } catch(e) {
+//     console.log(e);
+//     alert(e);
+//   }
+// }
