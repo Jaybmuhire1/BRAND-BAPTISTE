@@ -1,16 +1,3 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyBnlmUBz1i1fZzYKWyonvLXNYAz5w5gIbw",
-  authDomain: "brand-baptiste.firebaseapp.com",
-  databaseURL: "https://brand-baptiste.firebaseio.com",
-  projectId: "brand-baptiste",
-  storageBucket: "brand-baptiste.appspot.com",
-  messagingSenderId: "23203165211",
-  appId: "1:23203165211:web:d677fd5eac909f23c674be"
-};
- firebase.initializeApp(firebaseConfig);
-//  const auth = firebase.auth();
-
-var db=firebase.firestore();
 
 
 //image
@@ -68,7 +55,7 @@ return v.toString(16);
 
 
 function fetchData(){
-
+    const db = firebase.firestore();
   db.collection("blog").get().then((querySnapshot) => {
     querySnapshot.forEach((blog1)=> {
       console.log(blog1.data().imageURL);
@@ -76,7 +63,7 @@ function fetchData(){
       // doc.data() is never undefined for query doc snapshots
       // console.log(blog1.id, " => ", blog1.data());
      firebase.storage().ref(blog1.data().imageURL).getDownloadURL().then((blogImageUrl)=>{
-      //  console.log(blogImageUrl);
+       console.log(blogImageUrl);
        console.log('hhhhh');
          blog.push({
              title: blog1.data().title,
@@ -102,29 +89,32 @@ function fetchData(){
 }
 
 
- function dipslayBlogPosts(){
+ function displayBlogPosts() {
  let postTitle = document.getElementById('headerWrapper');
  let postImage = document.getElementById('imageWrapper');
  let postBody = document.getElementById('contentWrapper');
  let postDate = document.getElementById('dateWrapper');
  let postAuthor = document.getElementById('ownerWrapper');
-//  let size = blog.length;
+ 
+    const size = blog.length;
+
     console.log(blog.length);
     console.log('hihi');
 
   blog.forEach((post) => {
-    postTitle.innerHTML = post.title;
-    postImage.src = post.imageSrc;
-    postBody.innerHTML = post.blogContent;
-    postDate.innerHTML = post.date;
-    postAuthor.innerHTML = post.owner;
-  })
+  postTitle.innerHTML = post.title;
+  postImage.src = post.imageSrc;
+  postBody.innerHTML = post.blogContent;
+  postDate.innerHTML = post.date;
+  postAuthor.innerHTML = post.owner;
+})
+ 
 }
 
 fetchData();
-// dipslayBlogPosts();
+// displayBlogPosts()
 setTimeout(()=>{
-  dipslayBlogPosts()
+displayBlogPosts()
 },10000)
 
 

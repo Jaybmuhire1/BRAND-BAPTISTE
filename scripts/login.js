@@ -12,8 +12,7 @@ const auth = firebase.auth();
 const signInForm = document.getElementById('login-form');
 const emailInput = document.getElementById('email-input');
 const passInput = document.getElementById('pass-input');
-
-
+const account = document.getElementById('account');
 
 signInForm.addEventListener('submit', onSignIn);
 function onSignIn (e) {
@@ -48,8 +47,8 @@ function onSignIn (e) {
 
  }  else {
    const promise = auth.signInWithEmailAndPassword(email, pass);
-   promise.then((val) => {
-   window.location.href = "../pages/createpost.html";
+   promise.then((user) => {
+   
    document.querySelector('.alert').style.display = 'block';
    document.querySelector('.alert').style.backgroundColor = '#008000';
    document.querySelector('.alert').innerHTML = 'Please insert password';
@@ -59,21 +58,29 @@ function onSignIn (e) {
     document.querySelector('.alert').style.display = 'block';
     document.querySelector('.alert').innerHTML = 'Please use the correct password';
     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-     console.log(e.message)});
+    console.log(e.message)});
    
  }
 
 };
 
-//add user function
-
 auth.onAuthStateChanged(user =>{
   if(user){
+    console.log(user);
+    window.location.href = "../pages/createpost.html";
+    // const html = `
+    // <div>Logged in as ${user.email} </div>`
+    // account.innerHTML = html;
+
     console.log('user logged in',user)
   } else {
+    // document.querySelector('.alert').style.display = 'block';
+    // document.querySelector('.alert').innerHTML = 'Please login first';
+    // setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
     console.log('user logged out')
   } 
 }) 
+
 
 
 

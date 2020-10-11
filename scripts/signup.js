@@ -22,7 +22,7 @@ var regx = /^[a-zA-Z]{2,}$/
 
   const emailInput = document.getElementById('email-input');
   const passInput = document.getElementById('pass-input');
-  const passCInput = document.getElementById('pass-confirm-input');
+  const passCInput = document.getElementById('passconfirm-input');
   const nameInput = document.getElementById('full-name');
 
    const nameFull = nameInput.value;
@@ -48,10 +48,13 @@ if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
   } else{
 
     const promise = auth.createUserWithEmailAndPassword(email, pass)
-    promise.then((user) => {addUser(auth.currentUser.uid, email, 'guest')
+    promise.then((user) => {
+    addUser(auth.currentUser.uid, email, 'guest');
     document.querySelector('.alert').style.display = 'block';
+    document.querySelector('.alert').style.backgroundColor = '#008000';
     document.querySelector('.alert').innerHTML = 'You have registered';
     setTimeout(function() {window.location.href = "../pages/login.html";}, 3000)
+    signUpForm.reset();
   });
   promise.catch (e =>{
     console.log(e);
@@ -61,23 +64,16 @@ if(nameFull === '' || email === '' || pass === '' || passConfirmInput === '') {
 
   }
   
-  signOut.addEventListener('click', (e) =>{
-    e.preventDefault();
-    auth.signOut().then(() => {
-      console.log('user has signed out')
-    })
-  });
 
-
-// const addUser = async (id,email,role) => {
-//   try {
-//     await db.collection('users').doc(id).set({
-//       id,
-//     email,
-//     role
-//     });
-//   } catch(e) {
-//     console.log(e);
-//     alert(e);
-//   }
-// }
+const addUser = async(id, email, role) => {
+  try {
+    db.collection('users').doc(id).set({
+      id,
+      email,
+      role,
+    });
+  } catch(e){
+    console.log(e);
+    alert(e);
+  }
+}
