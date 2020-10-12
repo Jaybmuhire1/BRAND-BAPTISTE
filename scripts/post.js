@@ -62,7 +62,8 @@ function fetchData(){
       
       // doc.data() is never undefined for query doc snapshots
       // console.log(blog1.id, " => ", blog1.data());
-     firebase.storage().ref(blog1.data().imageURL).getDownloadURL().then((blogImageUrl)=>{
+     firebase.storage().ref(blog1.data().imageURL).getDownloadURL().then(
+      (blogImageUrl)=>{
        console.log(blogImageUrl);
        console.log('hhhhh');
          blog.push({
@@ -80,9 +81,9 @@ function fetchData(){
 
       });
     })
-    // .catch((fetchingError)=>{
-    //   console.log(fetchingError);
-    // })
+    .catch((fetchingError)=>{
+      console.log(fetchingError);
+    })
   }  
 
 )
@@ -119,18 +120,8 @@ displayBlogPosts()
 
 
 
-
-
-
-
-
-
-// window.onload=function(){
-//   this.getData();
-// }
-// function deletePost(key){
-//   console.log(key.id.toString());
-//   var doc1=key.id.toString();
-// firebase.firestore().collection('blog').doc(doc1).delete();
-// getData();
-// }
+// const account =document.querySelector('#account');
+// const html = `
+// <div>${user}</div>
+// `;
+// account.innerHTML = html;

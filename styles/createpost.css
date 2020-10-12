@@ -100,6 +100,17 @@ input[type=text], textarea {
   
 }
 
+.hide {
+display: none;
+}
+.account:hover+.hide {
+  display: block;
+  color: blue;
+}
+
+
+
+
 
   @media only screen and ( max-width: 1455px) {
     button{

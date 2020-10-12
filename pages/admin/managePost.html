@@ -42,35 +42,13 @@
             <th colspan="3">Action</th>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="Post">Amazing journey</td>
-              <td data-label="Author">JayB</td>
-              <td data-label="Action"><a href="#">Delete</td></a>
-              <td><a href="#" class="edit">Edit</td>
-              <td><a href="#" class="publish">Publish</td>
-            </tr>
-            <tr>
-              <td data-label="Post">Amazing journey</td>
-              <td data-label="Author">JayB</td>
-              <td data-label="Action"><a href="#" class="delete">Delete</td>
-              <td><a href="#" class="edit">Edit</td>
-              <td><a href="#" class="publish">Publish</td>
-            </tr>
-            <tr>
-              <td data-label="Post">Amazing journey</td>
-              <td data-label="Author">Jem</td>
-              <td data-label="Action"><a href="#"  class="delete">Delete</td>
-              <td><a href="#"  class="edit">Edit</td>
-              <td><a href="#"  class="publish">Publish</td>
-            </tr>
-            <tr>
-              <td data-label="Post">Amazing journey</td>
-              <td data-label="Author">Emma</td>
-              <td data-label="Action"><a href="#"  class="delete">Delete</td>
-              <td><a href="#"  class="edit">Edit</td>
-              <td><a href="#" class="publish">Publish</td>
-            </tr>
-
+            <!-- <tr>
+              <td data-label="Post"></td>
+              <td data-label="Author"></td>
+              <td data-label="Action"><a href="#"></td></a>
+              <td><a href="#" class="edit"></td>
+              <td><a href="#" class="publish"></td>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -94,6 +72,7 @@
     };
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
+    const db = firebase.firestore();
     </script>
 
     <script src="../scripts/main.js"></script>

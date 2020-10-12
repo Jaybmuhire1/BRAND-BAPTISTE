@@ -51,7 +51,7 @@ function onSignIn (e) {
    
    document.querySelector('.alert').style.display = 'block';
    document.querySelector('.alert').style.backgroundColor = '#008000';
-   document.querySelector('.alert').innerHTML = 'Please insert password';
+   document.querySelector('.alert').innerHTML = 'Successfully login';
    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
    });
    promise.catch(e => {
@@ -67,6 +67,7 @@ function onSignIn (e) {
 auth.onAuthStateChanged(user =>{
   if(user){
     console.log(user);
+
     window.location.href = "../pages/createpost.html";
     // const html = `
     // <div>Logged in as ${user.email} </div>`
@@ -84,3 +85,14 @@ auth.onAuthStateChanged(user =>{
 
 
 
+// function giveAccess(user){
+//   if(user) {
+//     window.location.href = "../pages/createpost.html";
+//   } else {
+//     window.location.href = "../pages/login.html";
+//     document.querySelector('.alert').style.display = 'block';
+//     document.querySelector('.alert').innerHTML = 'Please login first';
+//     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
+
+//   }
+// }
