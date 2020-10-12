@@ -10,77 +10,11 @@ body{
   min-height: 100vh;
   min-width: 100vw;
 }
-.container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-}
 
-.left-side {
-  background-color: #A51A1A;
-  padding: 40px;
-  color:white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30%;
-  height: 100vh;
-} 
 
-.profile-pic img{
-  height: 9rem;
-  width: 9rem;
- display: block;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
-}
-.navbar-links{
-  color: white;
-  height: 30%;
-  margin-top: 10px;
-}
-.navbar-links ul {
-  list-style: none;
-  text-decoration: none;
-  line-height: 2rem;
-}
-.navbar-links ul li a{
-  font-size: .9rem;
-  color: white;
-  text-decoration: none;
-
-}
-h1{
-  font-size: 1.5rem;
-}
-
-.social-media ul{
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: .1rem;
-}
-.sentence{
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 0px;
-}
-.social-media{
-  padding: 0px;
-  margin-top: .001rem;
-  height: 2rem;
-
-}
-.social-media ul li img{
-  width: 2rem;
-  height: 2rem;
-}
 .right-side{
-  height: 100vh;
-  width: 60%;
+  height: 100%;
+  width: 100%;
   margin: auto auto;
   display: flex;
   flex-direction: column;
@@ -98,31 +32,18 @@ h1{
   display: none;
 }
 
-.create-post ul{
-  height: 15vh;
-  width: 69%;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #A51A1A;
-  top: 0;
-  left: 31%;
-  position: fixed;
-  
-}
 .create-post ul li a {
 
   color: white;
-  margin: 2rem;
-  font-size: 1rem;
+  margin: 1rem;
+  font-size: 1.2rem;
   
 }
 
 form{
   margin-top: 2rem;
   width: 60vw;
+  margin: auto auto;
 }
 
 input[type=text], textarea {
@@ -139,12 +60,10 @@ input[type=text], textarea {
     font-size: 1rem;
   }
  button{
-   position: absolute;
-   bottom: 4rem;
-   left: 30rem;
    border: 2px solid black;
    width: 7rem;
    height: 2rem;
+   background-color: #A51A1A;
    cursor: pointer;
  }
  .toggle-button {
@@ -163,6 +82,35 @@ input[type=text], textarea {
   background-color: white;
   border-radius: 10px;
   }
+
+
+  /* Codes for blog dashboard */
+
+
+
+.create-post ul{
+  height: 30vh;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #A51A1A;
+  
+}
+
+.hide {
+display: none;
+}
+.account:hover+.hide {
+  display: block;
+  color: blue;
+}
+
+
+
+
 
   @media only screen and ( max-width: 1455px) {
     button{

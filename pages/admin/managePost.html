@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="admin-photo">
+        <span>Admin Panel</span>
+        <img src="../../assets/images/admin-photo.jpg" alt="admin-photo">
+      </div>
+      <div class="container-left">
+        <div><a class="left-management active1" href="managePost.html">Manage Posts</a></div>
+        <br>
+        <div><a class="left-management" href="manageMessage.html">Manage Messages</a></div>
+        <br>
+        <div><a class="left-management" href="manageUser.html">Manage Users</a></div>
+      </div>
+    </div>
+    <div class="container-right">
+      <a href="admCreatepost.html" class="addpost-button">Add post</a>
+      <a class="logout-button" href="../../index.html">Log out</a>
+      <br>
+      
+
+      <div class="content">
+        <h3 class="post-title">Manage Posts</h3>
+        <table>
+          <thead>
+            <th>Post</th>
+            <th>Author</th>
+            <th colspan="3">Action</th>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td data-label="Post"></td>
+              <td data-label="Author"></td>
+              <td data-label="Action"><a href="#"></td></a>
+              <td><a href="#" class="edit"></td>
+              <td><a href="#" class="publish"></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+  </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    
+    <script>
+      var firebaseConfig = {
+      apiKey: "AIzaSyBnlmUBz1i1fZzYKWyonvLXNYAz5w5gIbw",
+      authDomain: "brand-baptiste.firebaseapp.com",
+      databaseURL: "https://brand-baptiste.firebaseio.com",
+      projectId: "brand-baptiste",
+      storageBucket: "brand-baptiste.appspot.com",
+      messagingSenderId: "23203165211",
+      appId: "1:23203165211:web:d677fd5eac909f23c674be"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../../scripts/adminPost.js"></script>
+</body>
+</html>
