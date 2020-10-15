@@ -19,16 +19,16 @@
   
 <div class="create-post">
   <ul>
-    <li><a href="createpost.html">Add new Post</a></li>
-    <li><a href="#">Edit Post</a></li>
+    <li><a href="createpost.html">Add Post</a></li>
+    <li><a href="#"><img src="../assets/images/edit.png">Edit</a></li>
     <li><a href="#">Publish Post</a></li>
-    <li><a href="#">Delete Post</a></li>
-    <li><a class ="account" href="#">Account</a></li>
+    <li><a href="#"><img src="../assets/images/delete.png"> Delete</a></li>
+    <li><a class ="account" href="#"><img src="../assets/images/account.png"> Account</a></li>
     <h4 class ="hide" href="#">Account Information</h4>
     <li><a id="logout-btn" href="#">Logout</a></li>
   </ul>
    <div class="alert">Message Sent</div>
-   <form  action="" onsubmit="event.preventDefault()" id="createform">
+   <form  action="" id="createform">
 
     <label for="">Title</label><br>
     <input id="inputtitle" type="text"><br>
@@ -36,13 +36,10 @@
     <textarea id="inputcontent" type="text" cols="30" rows="10"></textarea> <br>
     <label for="">Image</label><br>
     <input type="file" id="image" onchange="uploadImage(event)">
-    <button  onclick="submit()" id="insert">CREATE POST</button>
+    <button  type="submit"     id="insert">CREATE POST</button>
    </form>
 </div>
 
-
-
-    
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
 

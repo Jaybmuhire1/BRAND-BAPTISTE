@@ -9,8 +9,13 @@ function uploadImage(event){
   }
 }
 
+const submitForm = document.getElementById('createform');
+submitForm.addEventListener('submit',onSubmit); 
 
-function submit() {
+
+
+function onSubmit(e) {
+  e.preventDefault();
   let today = new Date();
   let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   
@@ -31,7 +36,6 @@ console.log(blogImage);
       date: date
 
   }).then(()=>{
-              
   }).catch((collectionError)=>{
       alert(collectionError);
   })
@@ -81,42 +85,42 @@ function fetchData(){
 
       });
     })
-    .catch((fetchingError)=>{
-      console.log(fetchingError);
-    })
+    // .catch((fetchingError)=>{
+    //   console.log(fetchingError);
+    // })
   }  
 
 )
 }
 
 
- function displayBlogPosts() {
- let postTitle = document.getElementById('headerWrapper');
- let postImage = document.getElementById('imageWrapper');
- let postBody = document.getElementById('contentWrapper');
- let postDate = document.getElementById('dateWrapper');
- let postAuthor = document.getElementById('ownerWrapper');
+//  function displayBlogPosts() {
+//  let postTitle = document.getElementById('headerWrapper');
+//  let postImage = document.getElementById('imageWrapper');
+//  let postBody = document.getElementById('contentWrapper');
+//  let postDate = document.getElementById('dateWrapper');
+//  let postAuthor = document.getElementById('ownerWrapper');
  
-    const size = blog.length;
+//     const size = blog.length;
 
-    console.log(blog.length);
-    console.log('hihi');
+//     console.log(blog.length);
+//     console.log(postTitle);
 
-  blog.forEach((post) => {
-  postTitle.innerHTML = post.title;
-  postImage.src = post.imageSrc;
-  postBody.innerHTML = post.blogContent;
-  postDate.innerHTML = post.date;
-  postAuthor.innerHTML = post.owner;
-})
+//   blog.forEach((post) => {
+//   postTitle.innerHTML = post.title;
+//   postImage.src = post.imageSrc;
+//   postBody.innerHTML = post.blogContent;
+//   postDate.innerHTML = post.date;
+//   postAuthor.innerHTML = post.owner;
+// })
  
-}
+// }
 
-fetchData();
+// fetchData();
+// // displayBlogPosts()
+// setTimeout(()=>{
 // displayBlogPosts()
-setTimeout(()=>{
-displayBlogPosts()
-},10000)
+// },10000)
 
 
 
@@ -125,3 +129,14 @@ displayBlogPosts()
 // <div>${user}</div>
 // `;
 // account.innerHTML = html;
+
+
+
+
+
+
+
+
+
+
+

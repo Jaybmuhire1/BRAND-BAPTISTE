@@ -47,21 +47,23 @@
     </div>
 <div class="right-side">
 <h2>Weekly Hot Posts</h2>
-  <div class="first-post">
-    <div class="post-text">
-      <div class="post-text1">
-        <h3 id="headerWrapper"></h3>
-        <br>
-        <p id="contentWrapper"> </p>
-      </div>
-      <div class="down-comment">
-          <div id="dateWrapper"></div>
-          <div id="ownerWrapper"></div>
-      </div>
+<div class="first-post">
+  <div class="post-text">
+    <div class="post-text1">
+      <h3></h3>
+      <br>
+      <p>
+      </p>
     </div>
-    <div class="blog-picture">
-      <img src="" alt="" id="imageWrapper">
+    <div class="down-comment">
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
+  </div>
+  <div class="blog-picture">
+    <img src="" alt="">
   </div>
 </div>
 </div>
@@ -82,9 +84,10 @@
 };
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+const db = firebase.firestore();
 </script>
 <script src="../scripts/main.js"></script>
-<script src="../scripts/post.js"></script>
+<script src="../scripts/fetch.js"></script>
 </body>
 </html>
 

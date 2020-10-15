@@ -24,10 +24,6 @@ db.collection("users").get().then(function(querySnapshot) {
 });
 
 function deleteUser() {
-  db.collection("users").doc("uid").delete().then(function(querySnapshot) {
-    console.log("Document successfully deleted!");
-  }).catch(function(error) {
-    console.error("Error removing document: ", error);
-  });
+  db.collection("users").doc(id).delete()
   
   }
