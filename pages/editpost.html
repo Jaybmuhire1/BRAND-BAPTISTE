@@ -16,36 +16,30 @@
       <span class="bar"></span>
     </a>
 
+  
 <div class="create-post">
-  <nav class="navbar-links">
-    <div class="adminP">
-      <h3>Admin Panel</h3>
-    </div>
-    <div class="nav_ul">
-      <ul>
-        <li><a href="createpost.html">Add Post</a></li>
-        <li><a href="./editpost.html">Edit</a></li>
-        <!-- <li><a href="#">Publish Post</a></li> -->
-        <li><a href="#"> Delete</a></li>
-        <li><a class ="account" href="#">Account</a></li>
-        <li><a id="logout-btn" href="#">Logout</a></li>
-      </ul>
-    </div>
-</nav>
+  <ul>
+    <li><a href="createpost.html">Add Post</a></li>
+    <li><a href="#">Edit</a></li>
+    <li><a href="#">Publish Post</a></li>
+    <li><a href="#"> Delete</a></li>
+    <li><a class ="account" href="#">Account</a></li>
+    <h4 class ="hide" href="#">Account Information</h4>
+    <li><a id="logout-btn" href="#">Logout</a></li>
+  </ul>
    <div class="alert">Message Sent</div>
-   <div class="create-form">
-    <form  action="" id="createform">
+   <form  action="" id="createform">
 
-      <label for="">Title</label><br>
-      <input id="inputtitle" type="text"><br>
-      <label for="">Content</label><br>
-      <textarea id="inputcontent" type="text" cols="30" rows="10"></textarea> <br>
-      <label for="">Image</label><br>
-      <input type="file" id="image" onchange="uploadImage(event)">
-      <button  type="submit"     id="insert">CREATE POST</button>
-     </form>
-  </div>
-   </div>
+    <label for="">Title</label><br>
+    <input id="inputtitle" type="text"><br>
+    <label for="">Content</label><br>
+    <textarea id="inputcontent" type="text" cols="30" rows="10"></textarea> <br>
+    <label for="">Image</label><br>
+    <input type="file" id="image" onchange="uploadImage(event)">
+    <button  type="submit"     id="insert">CREATE POST</button>
+   </form>
+</div>
+
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
 
@@ -66,7 +60,7 @@
     const db = firebase.firestore();
     </script>
 
-    <script src="../scripts/main2.js"></script>
+    <script src="../scripts/main.js"></script>
     <script src="../scripts/logout.js"></script>
     <script src="../scripts/post.js"></script>
 </body>
