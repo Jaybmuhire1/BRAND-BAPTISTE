@@ -21,8 +21,11 @@ function onSignIn (e) {
  const pass = passInput.value;
  var regx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
-
- if (!regx.test(email)) {
+ if ( email == "admin@co.ke" && pass == "Admin123"){
+  alert ("Login successfully");
+  window.location = "../pages/admin/managePost.html"; 
+  return false;
+ } else if (!regx.test(email)) {
    document.querySelector('.alert').style.display = 'block';
    document.querySelector('.alert').innerHTML = 'Please validate your email';
    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
@@ -45,14 +48,19 @@ function onSignIn (e) {
    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
    return false;
 
- }  else {
+ } else {
    const promise = auth.signInWithEmailAndPassword(email, pass);
    promise.then((user) => {
-   
+    if(email == "admin.co.ke" && pass == "Admin123"){
+      alert ("Login successfully");
+      window.location = "../pages/admin/managePost.html"; 
+      return false;
+    
+     }
    document.querySelector('.alert').style.display = 'block';
    document.querySelector('.alert').style.backgroundColor = '#008000';
+   setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 1000);
    document.querySelector('.alert').innerHTML = 'Successfully login';
-   setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
    });
    promise.catch(e => {
     document.querySelector('.alert').style.display = 'block';
@@ -67,7 +75,8 @@ function onSignIn (e) {
 auth.onAuthStateChanged(user =>{
   if(user){
     console.log(user);
-
+    let userEmail = user.email;
+    
     window.location.href = "../pages/createpost.html";
     // const html = `
     // <div>Logged in as ${user.email} </div>`
