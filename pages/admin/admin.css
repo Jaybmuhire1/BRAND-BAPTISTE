@@ -298,3 +298,13 @@ input[type=text], textarea {
    cursor: pointer;
    margin-left: -4rem;
  }
+ .update-btn{
+   position: absolute;
+ right: 3rem;
+ bottom: 2rem;
+ }
+ .saveChanes-btn{
+  position: absolute;
+  right: 10rem;
+  bottom: 0rem;
+ }

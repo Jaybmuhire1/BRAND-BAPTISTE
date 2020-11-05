@@ -1,8 +1,7 @@
 
-
  function displayBlogPosts() {
  
-let container = document.querySelector('.first-post');
+let container = document.querySelector('.right-side');
 
 
   db.collection("blog").get().then((blog) => {
