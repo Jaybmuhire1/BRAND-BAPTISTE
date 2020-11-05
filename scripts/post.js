@@ -13,16 +13,17 @@ const submitForm = document.getElementById('createform');
 submitForm.addEventListener('submit',onSubmit); 
 
 
+let blogTitle = document.getElementById('inputtitle').value;
+let blogContnent = document.getElementById('inputcontent').value;
+let blogOwner = "John Doe";
+let blogId = uuidv4();
+
 
 function onSubmit(e) {
   e.preventDefault();
   let today = new Date();
   let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   
-  let blogTitle = document.getElementById('inputtitle').value;
-  let blogContnent = document.getElementById('inputcontent').value;
-  let blogOwner = "John Doe";
-  let blogId = uuidv4();
 
 console.log(blogImage);
 
@@ -92,6 +93,38 @@ function fetchData(){
 
 )
 }
+
+
+
+
+function saveChanges() {
+  db.collection("blog").doc(id).update({
+    title: blogTitle,
+    blogBody: blogContnent,
+    imageURL: `blog/${blogId}/blogImage`,
+  }) 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  function displayBlogPosts() {

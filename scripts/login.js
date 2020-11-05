@@ -1,14 +1,3 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyBnlmUBz1i1fZzYKWyonvLXNYAz5w5gIbw",
-  authDomain: "brand-baptiste.firebaseapp.com",
-  databaseURL: "https://brand-baptiste.firebaseio.com",
-  projectId: "brand-baptiste",
-  storageBucket: "brand-baptiste.appspot.com",
-  messagingSenderId: "23203165211",
-  appId: "1:23203165211:web:d677fd5eac909f23c674be"
-};
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 const signInForm = document.getElementById('login-form');
 const emailInput = document.getElementById('email-input');
 const passInput = document.getElementById('pass-input');
@@ -21,11 +10,7 @@ function onSignIn (e) {
  const pass = passInput.value;
  var regx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
- if ( email == "admin@co.ke" && pass == "Admin123"){
-  alert ("Login successfully");
-  window.location = "../pages/admin/managePost.html"; 
-  return false;
- } else if (!regx.test(email)) {
+  if (!regx.test(email)) {
    document.querySelector('.alert').style.display = 'block';
    document.querySelector('.alert').innerHTML = 'Please validate your email';
    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
@@ -49,59 +34,49 @@ function onSignIn (e) {
    return false;
 
  } else {
-   const promise = auth.signInWithEmailAndPassword(email, pass);
+   const promise = firebase
+    .auth()
+    .signInWithEmailAndPassword(email, pass);
    promise.then((user) => {
-    if(email == "admin.co.ke" && pass == "Admin123"){
-      alert ("Login successfully");
-      window.location = "../pages/admin/managePost.html"; 
-      return false;
-    
-     }
+ 
+   
    document.querySelector('.alert').style.display = 'block';
-   document.querySelector('.alert').style.backgroundColor = '#008000';
    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 1000);
    document.querySelector('.alert').innerHTML = 'Successfully login';
    });
-   promise.catch(e => {
-    document.querySelector('.alert').style.display = 'block';
-    document.querySelector('.alert').innerHTML = 'Please use the correct password';
-    setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-    console.log(e.message)});
-   
+   promise.catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+
+  document.querySelector('.alert').style.display='block';
+  document.querySelector('.alert').innerHTML=errorMessage;
+  setTimeout(function(){
+      document.querySelector('.alert').style.display='none'; 
+  },3000);
+  signInForm.reset();
+  });
  }
+ firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      console.log(user.email);
+      window.location.href='../pages/createpost.html';
+      setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 5000);
+    }
+  } else {
+    // No user is signed in.
+  }
+});
 
 };
 
-auth.onAuthStateChanged(user =>{
-  if(user){
-    console.log(user);
-    let userEmail = user.email;
-    
-    window.location.href = "../pages/createpost.html";
-    // const html = `
-    // <div>Logged in as ${user.email} </div>`
-    // account.innerHTML = html;
-
-    console.log('user logged in',user)
-  } else {
-    // document.querySelector('.alert').style.display = 'block';
-    // document.querySelector('.alert').innerHTML = 'Please login first';
-    // setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
-    console.log('user logged out')
-  } 
-}) 
 
 
 
 
-// function giveAccess(user){
-//   if(user) {
-//     window.location.href = "../pages/createpost.html";
-//   } else {
-//     window.location.href = "../pages/login.html";
-//     document.querySelector('.alert').style.display = 'block';
-//     document.querySelector('.alert').innerHTML = 'Please login first';
-//     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
 
-//   }
-// }
+

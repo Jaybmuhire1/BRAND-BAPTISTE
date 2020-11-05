@@ -1,8 +1,3 @@
-
-
-
-
-//Get user
 // const usersList = document.querySelector('tbody');
 db.collection("users").get().then(function(querySnapshot) {
   querySnapshot.forEach( async function(doc) {
