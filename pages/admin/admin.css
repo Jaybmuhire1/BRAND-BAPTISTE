@@ -308,3 +308,8 @@ input[type=text], textarea {
   right: 10rem;
   bottom: 0rem;
  }
+
+ .action-btn{
+   display: flex;
+   justify-content: space-evenly;
+ }

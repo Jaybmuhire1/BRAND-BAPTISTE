@@ -3,8 +3,6 @@ const blogList = document.querySelector('tbody')
 
 
 
-
-
 db.collection("blog").get().then(function(querySnapshot) {
    querySnapshot.forEach(function(doc) {
     blogList.innerHTML +=`<td data-label="Email">${doc.data().title}</td><td data-label="fullname">${doc.data().owner}
