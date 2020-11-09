@@ -65,7 +65,7 @@ function onSignIn (e) {
     if (user != null) {
       console.log(user.email);
       window.location.href='../pages/createpost.html';
-      setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 5000);
+      setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 3000);
     }
   } else {
     // No user is signed in.

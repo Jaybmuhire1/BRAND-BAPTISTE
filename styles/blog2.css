@@ -90,7 +90,7 @@ h1{
   font-size: 1.1rem;
   width: 60%;
   margin-top: 2vh;
-  margin-left: 35%;
+  margin: auto auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,17 +159,7 @@ font-size: 1.3rem;
 text-align: center;
 }
 
-/* .post-list{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 80%;
-  border: 5px solid black;
-  border-radius: 10px;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
 
-} */
 .post-list ol{
   margin: auto;
   margin-top: 1rem;
@@ -355,4 +345,24 @@ flex-direction: column;
   .right-side{
     margin: auto;
   }
+}
+
+.options{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.editBlog{
+  cursor: pointer;
+  background-color: red;
+  margin: 10px;
+  padding: 10px;
+  
+}
+.deleteBlog{
+  cursor: pointer;
+  background-color: red;
+  margin: 10px;
+  padding: 10px;
 }

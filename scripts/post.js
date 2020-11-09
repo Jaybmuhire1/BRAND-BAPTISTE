@@ -106,62 +106,73 @@ function saveChanges() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  function displayBlogPosts() {
-//  let postTitle = document.getElementById('headerWrapper');
-//  let postImage = document.getElementById('imageWrapper');
-//  let postBody = document.getElementById('contentWrapper');
-//  let postDate = document.getElementById('dateWrapper');
-//  let postAuthor = document.getElementById('ownerWrapper');
+function displayBlogPosts() {
+  let container = document.querySelector('.right-side');
  
-//     const size = blog.length;
-
-//     console.log(blog.length);
-//     console.log(postTitle);
-
-//   blog.forEach((post) => {
-//   postTitle.innerHTML = post.title;
-//   postImage.src = post.imageSrc;
-//   postBody.innerHTML = post.blogContent;
-//   postDate.innerHTML = post.date;
-//   postAuthor.innerHTML = post.owner;
-// })
+   db.collection("blog").get().then((blog) => {
+    blog.forEach(async(post) => {
+     const image = await firebase.storage().ref(post.data().imageURL).getDownloadURL().then((imageURL) => {
+       return imageURL
+     })
  
-// }
-
-// fetchData();
-// // displayBlogPosts()
-// setTimeout(()=>{
-// displayBlogPosts()
-// },10000)
-
-
-
-// const account =document.querySelector('#account');
-// const html = `
-// <div>${user}</div>
-// `;
-// account.innerHTML = html;
+   const div = document.createElement('div');
+   div.innerHTML = `
+     <div class="first-post">
+     <div class="post-text">
+       <div class="post-text1">
+         <h3>${post.data().title}</h3>
+         <br>
+         <p>
+         ${post.data().blogBody}
+         </p>
+       </div>
+       <div class="down-comment">
+         <ul>
+           <li>${post.data().owner}</li>
+           <li>${post.data().date}</li>
+         </ul>
+       </div>
+     </div>
+     <div class="blog-picture">
+       <img src="${image}" alt="">
+     </div>
+     <div class="options">
+     <div onclick="editBlog()" id="editBlog" class="editBlog">Edit Blog</div>
+     <div id="deleteBlog" class="deleteBlog">Delete Blog</div>
+     </div>
+   </div>`
+ container.appendChild(div);
+ })
+   })
+ 
+   const editBlog = document.getElementById('editBlog');
+ 
+   // function deleteBlog(){
+     const deleteBlog = document.getElementById('deleteBlog');
+     deleteBlog.addEventListener('click', (e) => {
+       // e.stopPropagation();
+     
+       // let dataId = e.target.getAttribute('data-id');
+     
+       // db.collection('blogs').doc(dataId).delete().then(function() {
+           console.log("Document successfully deleted!");
+     
+     //   }).catch(function(error) {
+     //       console.error("Error removing document: ", error);
+     //   });
+     })
+   // }
+  
+    
+ }
+ 
+ //  fetchData();
+  // displayBlogPosts()
+  setTimeout(()=>{
+  displayBlogPosts()
+  },10000)
+  
+  
 
 
 

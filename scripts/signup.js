@@ -43,7 +43,6 @@ else if (pass !== passConfirmInput) {
     setTimeout(function() {document.querySelector('.alert').style.display = 'none';}, 2000);
     return false;
   } else {
-
     const promise = firebase 
       .auth()
       .createUserWithEmailAndPassword(email, pass);
@@ -59,9 +58,7 @@ else if (pass !== passConfirmInput) {
   promise.catch (e =>{
     console.log(e);
   });
-
   }
-
   }
   
 
